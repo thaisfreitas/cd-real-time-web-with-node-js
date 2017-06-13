@@ -30,3 +30,11 @@ http.createServer(function(request, response) {
   });
 
 }).listen(8080);
+
+//response end
+var http = require('http');
+
+http.createServer(function(request, response) {
+  response.writeHead(200);
+  response.end("Hello, this is dog");
+}).listen(8080);
