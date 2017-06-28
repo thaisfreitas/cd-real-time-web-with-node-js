@@ -52,3 +52,16 @@ app.listen(8080);
 <blockquote>
   <%= quote %>
 </blockquote>
+
+//url building
+var url = require('url');
+
+options = {
+  protocol: 'http:',
+  host: 'search.twitter.com',
+  pathname: 'search.json?q=codeschool',
+  query: {q:"codeschool"}
+};
+
+var searchURL = url.format(options);
+console.log(searchURL);
