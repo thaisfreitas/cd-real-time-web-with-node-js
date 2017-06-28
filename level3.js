@@ -27,3 +27,14 @@ http.createServer(function(request, response) {
   var file = fs.createReadStream('index.html');
   file.pipe(response);
 }).listen(8080);
+
+//file read stream
+var fs = require('fs');
+
+var file = fs.createReadStream("fruits.txt");
+file.on('readable', function(){
+  var chunk = null;
+  while(null !== (chunk = file.read())){
+     console.log(chunk.toString());
+  }
+});
