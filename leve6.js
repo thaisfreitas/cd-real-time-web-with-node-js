@@ -9,3 +9,10 @@ io.on('connection', function(client) {
 });
 
 server.listen(8080);
+
+//client socket setup
+<script src= '/socket.io/socket.io.js'></script>
+<script>
+  // use the socket.io server to connect to localhost:8080 here
+  io.connect('http://localhost:8080');
+</script>
