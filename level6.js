@@ -39,3 +39,17 @@ io.sockets.on('connection', function(client) {
 });
 
 server.listen(8080);
+
+//answering questions to client
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var server = io.connect('http://localhost:8080');
+
+  server.on('question', function(question) {
+    insertQuestion(question);
+  });
+  server.on('answer', function(question, answer){
+    answerQuestion(question, answer);
+  });
+
+</script>
