@@ -26,3 +26,11 @@ client.lpush("questions",question1 , function(error, value){
 client.lpush("questions",question2 , function(error, value){
   console.log(value);
 });
+
+//working with lists 2
+var redis = require('redis');
+var client = redis.createClient();
+
+client.lrange("questions", 0, -1, function(error, messagens){
+   console.log(messagens);
+});
